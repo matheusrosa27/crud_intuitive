@@ -24,6 +24,7 @@ function buscar() {
             let cellRep =  linha.insertCell();
             let cellCargRep =  linha.insertCell();
             let cellDataRegANS =  linha.insertCell();
+             
             cellRegANS.innerText = dados.registro_ans;
             cellCNPJ.innerText = dados.cnpj;
             cellRazSoc.innerText = dados.razao_social;

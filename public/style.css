@@ -1,0 +1,51 @@
+/* Body color */
+body{
+    background-color: #ebebeb !important;
+}
+
+/* Container color */
+#divWhite{
+    background-color:white;
+}
+
+/* Logo */
+.header{
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 3px 6px grey;
+}
+#logo{
+    padding: 7px;
+    width:13rem;
+    height:4rem;
+}
+
+/* Fix to navbar */
+#flex{
+    display: flex;
+}
+.navbar-brand {
+    margin-left: 10px;
+}
+.form-control{
+    margin-right: 10px;
+}
+
+/* Table */
+th{
+    font-size: 16px;
+}
+#corpoTabela {
+    font-size: 15px;
+}
+
+/* Title color */
+#aColor{
+    color: blue;
+}
+
+/* Table limit */
+.containerTable {
+    height: 500px;
+    overflow: auto;
+}

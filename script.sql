@@ -26,11 +26,11 @@ CREATE TABLE dados(
     data_registro_ans varchar(10)
 );
 
-LOAD DATA local INFILE 'C:\\Users\\Matheus\\intuitive\\Relatorio_cadop.csv' 
+LOAD DATA local INFILE 'C:\\Users\\Matheus\\intuitive\\vue-project\\Relatorio_cadop.csv' 
 INTO TABLE dados 
 FIELDS TERMINATED BY ';' 
 ENCLOSED BY '"'
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
 
-select * from dados;
+select * from dados where registro_ans > 0;
