@@ -29,7 +29,7 @@ app.get("/public/functions.js",(req,res) => {
     res.sendFile(__dirname+"/public/functions.js");
 });
 
-app.get("/consultarTabela",(req,res) => {
+app.get("/consultTable",(req,res) => {
     conexao.query("SELECT * FROM dados WHERE registro_ans > 0",
     (erro,resultado) => {
         if(erro) {
@@ -40,6 +40,21 @@ app.get("/consultarTabela",(req,res) => {
         }
     });
 });
+
+app.get("/consultTableCond", (req,res) => {
+    let reg_ans = req.query.reg_ans;
+    conexao.query("SELECT * FROM dados WHERE registro_ans = ?",[reg_ans],
+    (erro,resultado) => {
+        if(erro) {
+            console.log(erro);
+            res.send("Deu erro");
+        } else {
+            res.send(resultado);
+        }
+    });
+});
+
+
 
 
 app.get("/adicionarCliente",(req,res) => {
