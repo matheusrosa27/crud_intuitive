@@ -1,3 +1,34 @@
+function insert(){
+    let reg_ans = document.getElementById('reg_ans').value;
+    let cnpj = document.getElementById('cnpj').value;
+    let raz_soc = document.getElementById('raz_soc').value;
+    let nome_fantasia = document.getElementById('nome_fantasia').value;
+    let modal = document.getElementById('modal').value;
+    let logradouro = document.getElementById('logradouro').value;
+    let log_num = document.getElementById('log_num').value;
+    let log_comp = document.getElementById('log_comp').value;
+    let bairro = document.getElementById('bairro').value;
+    let uf = document.getElementById('uf').value;
+    let cidade = document.getElementById('cidade').value;
+    let cep = document.getElementById('cep').value;
+    let ddd = document.getElementById('ddd').value;
+    let telefone = document.getElementById('telefone').value;
+    let fax = document.getElementById('fax').value;
+    let email = document.getElementById('email').value;
+    let representante = document.getElementById('representante').value;
+    let carg_rep = document.getElementById('carg_rep').value;
+    let data_reg_ans = document.getElementById('data_reg_ans').value;
+
+    if(reg_ans < 111111 || reg_ans > 999999){
+        window.alert('Registro ANS inválido');
+    } else if (!reg_ans || !cnpj || !raz_soc || !modal || !logradouro || !log_num || !bairro || !uf || !cidade || !cep || !email || !representante || !carg_rep || !data_reg_ans){
+        window.alert('Preencha os campos obrigatórios!');
+    } else {
+        fetch("/insert?reg_ans="+reg_ans+"&cnpj="+cnpj+"&raz_soc="+raz_soc+"&nome_fantasia="+nome_fantasia+"&modal="+modal+"&logradouro="+logradouro+"&log_num="+log_num+"&log_comp="+log_comp+"&bairro="+bairro+"&cidade="+cidade+"&uf="+uf+"&cep="+cep+"&ddd="+ddd+"&telefone="+telefone+"&fax="+fax+"&email="+email+"&representante="+representante+"&carg_rep="+carg_rep+"&data_reg_ans="+data_reg_ans).then();
+        window.alert('Adicionado com Sucesso!')
+    }
+}
+
 function search(){
     let empty = document.getElementById('bodyTable').innerHTML = '';
     let reg_ans = document.getElementById('searchInput').value;

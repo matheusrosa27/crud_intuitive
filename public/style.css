@@ -39,7 +39,7 @@ th{
     font-size: 15px;
 }
 
-/* Title color */
+/* Home Title color */
 #aColor{
     color: blue;
 }
@@ -48,4 +48,16 @@ th{
 .containerTable {
     height: 500px;
     overflow: auto;
+}
+
+/* Add in Table Title */
+#addTitle {
+    margin-left:30px;
+    color:blue;
+    font-size: 25px;
+}
+
+/* Insert Input */
+#addInput {
+    width: 200px;
 }
