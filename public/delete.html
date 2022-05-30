@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <!-- Bootstrap -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- JavaScript -->
+    <script src="/public/functions.js"></script>
+    
+    <title>Relação de Operadoras Ativas ANS</title>
+</head>
+<body>
+      
+        <div class="header" id="divWhite">
+            <a href="/">
+                <img src="img/logo.png" id="logo">
+            </a>
+        </div>
+
+    
+        <br/>
+        <div class="container" id="divWhite">
+            <nav class="navbar justify-content-between">
+                <div class="d-flex flex-row">   
+                    <a href="/" class="navbar-brand" id="aColor">Relações de Operadoras Ativas ANS</a>
+                    <div class="dropdown">
+                        <a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Opções
+                        </a>
+                      
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                          <a class="dropdown-item" href="/insert.html">Adicionar Operadora</a>
+                          <a class="dropdown-item" href="/update.html">Atualizar Cadastro</a>
+                          <a class="dropdown-item" href="/delete.html">Deletar Operadora</a>
+                        </div>
+                      </div>
+                </div>
+                <form class="form-inline" id="flex">
+                    <input id="searchInput" class="form-control" type="text" placeholder="Registro ANS" aria-label="Search">
+                    <button class="btn btn-outline-primary" type="button" onclick="search()">Pesquisar</button>
+                </form>
+            </nav>  
+        </div>  
+        
+        <div class="container" id="divWhite">
+            <p id="addTitle">Deletar Operadora</p>
+            <p id="addSubtitle">Digite abaixo o Registro ANS da operadora que deseja deletar!</p>
+
+
+            <div class="container">
+                Registro ANS*: <input type="text" class="form-control" maxlength="6" max="999999" id="reg_ans">
+                    
+                <br/>
+                <div class="d-flex justify-content-center">
+                    <button type="button" class="btn btn-outline-primary" onclick="delet()">Deletar!</button>
+                </div>
+            </div>
+            <br/>
+        </div>
+        <br/>
+</body>
+
+</html>
