@@ -50,78 +50,13 @@ function update(){
     let carg_rep = document.getElementById('carg_rep').value;
     let data_reg_ans = document.getElementById('data_reg_ans').value;
 
-    if (cnpj != 0){
-        fetch("/update?cnpj="+cnpj+"&reg_ans="+reg_ans).then();
-        window.alert('CNPJ atualizado com sucesso!')
-    }
-
-    if (raz_soc != 'empty'){
-        fetch("/update?raz_soc="+raz_soc+"&reg_ans="+reg_ans).then();
-        window.alert('Razão Social atualizado com sucesso!')
-    }
-
-    if (nome_fantasia != null){
-
-    }
-
-    if (modal != null){
-
-    }
-
-    if (logradouro != null){
-
-    }
-
-    if (log_num != null){
-
-    }
-
-    if (log_comp != null){
-
-    }
-
-    if (bairro != null){
-
-    }
-
-    if (uf != null){
-
-    }
-
-    if (cidade != null){
-
-    }
-
-    if (cep != 0){
-
-    }
-    
-    if (ddd != 0){
-
-    }
-
-    if (telefone != 0){
-
-    }
-
-    if (fax != 0){
-
-    }
-
-    if (email != null){
-
-    }
-
-    if (representante != null){
-
-    }
-
-    if (carg_rep != null){
-
-    }
-
-    if (data_reg_ans != null){
-
+    if(reg_ans < 111111 || reg_ans > 999999){
+        window.alert('Registro ANS inválido');
+    } else if (!reg_ans || !cnpj || !raz_soc || !modal || !logradouro || !log_num || !bairro || !uf || !cidade || !cep || !email || !representante || !carg_rep || !data_reg_ans){
+        window.alert('Preencha os campos obrigatórios!');
+    } else {
+        fetch("/update?reg_ans="+reg_ans+"&cnpj="+cnpj+"&raz_soc="+raz_soc+"&nome_fantasia="+nome_fantasia+"&modal="+modal+"&logradouro="+logradouro+"&log_num="+log_num+"&log_comp="+log_comp+"&bairro="+bairro+"&cidade="+cidade+"&uf="+uf+"&cep="+cep+"&ddd="+ddd+"&telefone="+telefone+"&fax="+fax+"&email="+email+"&representante="+representante+"&carg_rep="+carg_rep+"&data_reg_ans="+data_reg_ans).then();
+        window.alert('Atualizado com Sucesso!')
     }
 
 }

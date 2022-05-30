@@ -62,48 +62,79 @@
                     <div class="col">
                         Registro ANS*: <input type="text" class="form-control" maxlength="6" max="999999" id="reg_ans">
                     </div>
+                    <div class="col">
+                        CNPJ*: <input type="number" class="form-control" maxlength="14" id="cnpj">
+                    </div>
                 </div>
                 <br/>
-                
-                CNPJ <input type="checkbox" id="checkCnpj" onclick="checkbox()">
-                - Razão Social <input type="checkbox" id="checkRaz" onclick="checkbox()">
-                - Nome Fantasia <input type="checkbox" id="checkNom" onclick="checkbox()">
-                - Modalidade <input type="checkbox" id="checkMod" onclick="checkbox()">
-                - Logradouro <input type="checkbox" id="checkLog" onclick="checkbox()">
-                - Número <input type="checkbox" id="checkNum" onclick="checkbox()">
-                - Complemento <input type="checkbox" id="checkComp" onclick="checkbox()">
-                - Bairro <input type="checkbox" id="checkBai" onclick="checkbox()">
-                - UF <input type="checkbox" id="checkUf" onclick="checkbox()">
-                - Cidade <input type="checkbox" id="checkCid" onclick="checkbox()">
-                - CEP <input type="checkbox" id="checkCep" onclick="checkbox()">
-                - DDD <input type="checkbox" id="checkDdd" onclick="checkbox()">
-                - Telefone <input type="checkbox" id="checkTel" onclick="checkbox()">
-                - Fax <input type="checkbox" id="checkFax" onclick="checkbox()">
+                <div class="col">
+                    Razão Social*: <input type="text" class="form-control" id="raz_soc">
+                </div>
                 <br/>
-                Email <input type="checkbox" id="checkEmail" onclick="checkbox()">
-                - Representante <input type="checkbox" id="checkRep" onclick="checkbox()">
-                - Cargo Representante <input type="checkbox" id="checkCarg" onclick="checkbox()">
-                - Data de Registro ANS <input type="checkbox" id="checkData" onclick="checkbox()">
-
-                <input value='0' style="display:none" placeholder="CNPJ" type="number" class="form-control" maxlength="14" id="cnpj"><br/>
-                <input value='empty' style="display:none" placeholder="Razão Social" type="text" class="form-control" id="raz_soc"><br/>
-                <input value='empty' style="display:none" placeholder="Nome Fantasia" type="text" class="form-control" id="nome_fantasia"><br/>
-                <input value='empty' style="display:none" placeholder="Modalidade" type="text" class="form-control" id="modal"><br/>
-                <input value='empty' style="display:none" placeholder="Logradouro" type="text" class="form-control" id="logradouro"><br/>
-                <input value='empty' style="display:none" placeholder="Número" type="text" class="form-control" id="log_num"><br/>
-                <input value='empty' style="display:none" placeholder="Complemento" type="text" class="form-control" id="log_comp"><br/>
-                <input value='empty' style="display:none" placeholder="Bairro" type="text" class="form-control" id="bairro"><br/>
-                <input value='empty' style="display:none" placeholder="UF" type="text" class="form-control" maxlength="2" id="uf"><br/>
-                <input value='empty' style="display:none" placeholder="Cidade" type="text" class="form-control" id="cidade"><br/>
-                <input value='0' style="display:none" placeholder="CEP" type="number" class="form-control" maxlength="8" id="cep"><br/>
-                <input value='0' style="display:none" placeholder="DDD" type="number" class="form-control" maxlength="2" id="ddd"><br/>
-                <input value='0' style="display:none" placeholder="Telefone" type="number" class="form-control" maxlength="9" id="telefone"><br/>
-                <input value='0' style="display:none" placeholder="Fax" type="number" class="form-control" maxlength="8" id="fax"><br/>
-                <input value='empty' style="display:none" placeholder="Email" type="text" class="form-control" id="email"><br/>
-                <input value='empty' style="display:none" placeholder="Representante" type="text" class="form-control" id="representante"><br/>
-                <input value='empty' style="display:none" placeholder="Cargo Representante" type="text" class="form-control" id="carg_rep"><br/>
-                <input value='0' style="display:none" placeholder="Data de Registro ANS" type="date" class="form-control" id="data_reg_ans"><br/>
+                <div class="row">
+                    <div class="col">
+                        Nome Fantasia: <input type="text" class="form-control" id="nome_fantasia">
+                    </div>
+                    <div class="col">
+                        Modalidade*: <input type="text" class="form-control" id="modal">
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        Logradouro*: <input type="text" class="form-control" id="logradouro">
+                    </div>
+                    <div class="col">
+                        Número*: <input type="text" class="form-control" id="log_num">
+                    </div>
+                    <div class="col">
+                        Complemento: <input type="text" class="form-control" id="log_comp">
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        Bairro*: <input type="text" class="form-control" id="bairro">
+                    </div>
+                    <div class="col">
+                        UF*: <input type="text" class="form-control" maxlength="2" id="uf">
+                    </div>
+                    <div class="col">
+                        Cidade*: <input type="text" class="form-control" id="cidade">
+                    </div>
+                    <div class="col">
+                        CEP*: <input type="number" class="form-control" maxlength="8" id="cep">
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        DDD: <input type="number" class="form-control" maxlength="2" id="ddd">
+                    </div>
+                    <div class="col">
+                        Telefone: <input type="number" class="form-control" maxlength="9" id="telefone">
+                    </div>
+                    <div class="col">
+                        Fax: <input type="number" class="form-control" maxlength="8" id="fax">
+                    </div>
+                </div>
+                <br/>
+                <div class="row">
+                    <div class="col">
+                        Email*: <input type="text" class="form-control" id="email">
+                    </div>
+                    <div class="col">
+                        Representante*: <input type="text" class="form-control" id="representante">
+                    </div>
+                    <div class="col">
+                        Cargo Representante*: <input type="text" class="form-control" id="carg_rep">
+                    </div>
+                    <div class="col">
+                        Data de Registro ANS*: <input type="date" class="form-control" id="data_reg_ans">
+                    </div>
+                </div>
                 
+                <br/>
                 <div class="d-flex justify-content-center">
                     <button type="button" class="btn btn-outline-primary" onclick="update()">Atualizar!</button>
                 </div>

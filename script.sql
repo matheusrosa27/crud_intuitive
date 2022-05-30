@@ -19,7 +19,7 @@ CREATE TABLE dados(
     cep varchar(8),
     ddd varchar(2),
     telefone varchar(9),
-    fax varchar(6),
+    fax varchar(8),
     email varchar(255),
     representante varchar(255),
     cargo_representante varchar(255),

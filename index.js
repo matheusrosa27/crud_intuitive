@@ -87,7 +87,7 @@ app.get("/insert",(req,res) => {
                 res.status(500).send(erro);
                 res.send('Erro!');
             } else {
-                console.log('Adicionado com sucesso!');
+                console.log(resultado);
                 res.send('Adicionado com sucesso!');
             }
         });
@@ -115,101 +115,18 @@ app.get("/update",(req, res) => {
     let carg_rep = req.query.carg_rep;
     let data_reg_ans = req.query.data_reg_ans;
 
-    if (cnpj != 0){
-        conexao.query("UPDATE dados SET cnpj = ? WHERE registro_ans = ?",[cnpj, reg_ans],
-        (erro,resultado) => {
-            if(erro) {
-                console.log(erro);
-                res.status(500).send(erro);
-                res.send("Deu erro");
-            } else {
-                console.log('Atualizado com sucesso!');
-                res.send(resultado);
-            }
-        });
-    } else {
-        
-    }
-
-    if (raz_soc != 'empty'){
-        conexao.query("UPDATE dados SET razao_social = ? WHERE registro_ans = ?",[raz_soc, reg_ans],
-        (erro,resultado) => {
-            if(erro) {
-                console.log(erro);
-                res.status(500).send(erro);
-                res.send("Deu erro");
-            } else {
-                console.log('Atualizado com sucesso!');
-                res.send(resultado);
-            }
-        });
-    } else {
-
-    }
-
-    if (nome_fantasia != null){
-
-    }
-
-    if (modal != null){
-
-    }
-
-    if (logradouro != null){
-
-    }
-
-    if (log_num != null){
-
-    }
-
-    if (log_comp != null){
-
-    }
-
-    if (bairro != null){
-
-    }
-
-    if (uf != null){
-
-    }
-
-    if (cidade != null){
-
-    }
-
-    if (cep != 0){
-
-    }
+    conexao.query("UPDATE dados SET cnpj=?, razao_social=?, nome_fantasia=?, modalidade=?, logradouro=?, log_numero=?, log_complemento=?, bairro=?, cidade=?, uf=?, cep=?, ddd=?, telefone=?, fax=?, email=?, representante=?, cargo_representante=?, data_registro_ans=? WHERE registro_ans=?",[cnpj, raz_soc, nome_fantasia, modal, logradouro, log_num, log_comp, bairro, cidade, uf, cep, ddd, telefone, fax, email, representante, carg_rep, data_reg_ans, reg_ans],
+    (erro,resultado) => {
+        if(erro) {
+            console.log(erro);
+            res.status(500).send(erro);
+            res.send('Erro!');
+        } else {
+            console.log(resultado);
+            res.send('Atualizado com sucesso!');
+        }
+    });
     
-    if (ddd != 0){
-
-    }
-
-    if (telefone != 0){
-
-    }
-
-    if (fax != 0){
-
-    }
-
-    if (email != null){
-
-    }
-
-    if (representante != null){
-
-    }
-
-    if (carg_rep != null){
-
-    }
-
-    if (data_reg_ans != null){
-
-    }
 })
 
 app.get("/delete",(req,res) => {
