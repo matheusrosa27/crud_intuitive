@@ -29,7 +29,7 @@ CREATE TABLE dados(
 SET GLOBAL local_infile=1;
 SET SQL_SAFE_UPDATES = 0;
 
-LOAD DATA local INFILE 'D:\\temp\\crud_intuitive\\Relatorio_cadop.csv' 
+LOAD DATA local INFILE 'C:\\Users\\Matheus\\intuitive\\vue-project\\Relatorio_cadop.csv' 
 INTO TABLE dados 
 FIELDS TERMINATED BY ';' 
 ENCLOSED BY '"'
