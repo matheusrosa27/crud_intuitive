@@ -29,7 +29,7 @@ app.get("/public/functions.js",(req,res) => {
     res.sendFile(__dirname+"/public/functions.js");
 });
 
-app.get("/consultTable",(req,res) => {
+app.get("/read",(req,res) => {
     conexao.query("SELECT * FROM dados WHERE registro_ans > 0",
     (erro,resultado) => {
         if(erro) {
@@ -41,7 +41,7 @@ app.get("/consultTable",(req,res) => {
     });
 });
 
-app.get("/consultTableCond", (req,res) => {
+app.get("/readCond", (req,res) => {
     let reg_ans = req.query.reg_ans;
     conexao.query("SELECT * FROM dados WHERE registro_ans = ?",[reg_ans],
     (erro,resultado) => {
@@ -53,9 +53,6 @@ app.get("/consultTableCond", (req,res) => {
         }
     });
 });
-
-
-
 
 app.get("/insert",(req,res) => {
     let reg_ans = req.query.reg_ans;
@@ -122,8 +119,8 @@ app.get("/update",(req, res) => {
             res.status(500).send(erro);
             res.send('Erro!');
         } else {
-            console.log(resultado);
-            res.send('Atualizado com sucesso!');
+            console.log('Atualizado com sucesso!');
+            res.send(resultado);
         }
     });
     
@@ -149,9 +146,3 @@ app.get("/delete",(req,res) => {
 });
 
 app.listen(3000);
-
-/*
-UPDATE dados
-SET cnpj = cnpj, nome_fantasia = 'Bilabilu'
-WHERE registro_ans = 417734;
-*/

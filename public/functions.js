@@ -1,3 +1,4 @@
+// Create
 function insert(){
     let reg_ans = document.getElementById('reg_ans').value;
     let cnpj = document.getElementById('cnpj').value;
@@ -29,6 +30,7 @@ function insert(){
     }
 }
 
+// Update
 function update(){
     let reg_ans = document.getElementById('reg_ans').value;
     let cnpj = document.getElementById('cnpj').value;
@@ -61,6 +63,7 @@ function update(){
 
 }
 
+// Delete
 function delet(){
     let reg_ans = document.getElementById('reg_ans').value;
 
@@ -70,6 +73,20 @@ function delet(){
     }
 }
 
+// Search Bar
+function searchBar(){
+    let btn = document.getElementById('btnSearch');
+    let reg_ans = document.getElementById('searchInput').value;
+
+    btn.addEventListener('click', function(){
+        sessionStorage.setItem('reg_ans', reg_ans);
+    })
+
+    window.location="/";
+
+}
+
+// Search
 function search(){
     let empty = document.getElementById('bodyTable').innerHTML = '';
     let reg_ans = document.getElementById('searchInput').value;
@@ -77,7 +94,7 @@ function search(){
     if (reg_ans == 0){
         table();
     } else {
-        fetch("/consultTableCond?reg_ans="+reg_ans).then((response) => {
+        fetch("/readCond?reg_ans="+reg_ans).then((response) => {
             return response.json().then((json) => {
                 let tabela = document.getElementById("bodyTable");
                 for (let index = 0; index < json.length; index++) {
@@ -130,8 +147,9 @@ function search(){
     
 }
 
-function table() {
-    fetch("/consultTable").then((response) => {
+// Read
+function read() {
+    fetch("/read").then((response) => {
     return response.json().then((json) => {
         let tabela = document.getElementById("bodyTable");
         for (let index = 0; index < json.length; index++) {
@@ -181,153 +199,4 @@ function table() {
 
         });
     })
-}  
-
-function checkbox(){
-    let cnpj = document.getElementById('checkCnpj');
-    let raz = document.getElementById('checkRaz');
-    let nom = document.getElementById('checkNom');
-    let mod = document.getElementById('checkMod');
-    let log = document.getElementById('checkLog');
-    let num = document.getElementById('checkNum');
-    let comp = document.getElementById('checkComp');
-    let bai = document.getElementById('checkBai');
-    let uf = document.getElementById('checkUf');
-    let cid = document.getElementById('checkCid');
-    let cep = document.getElementById('checkCep');
-    let ddd = document.getElementById('checkDdd');
-    let tel = document.getElementById('checkTel');
-    let fax = document.getElementById('checkFax');
-    let email = document.getElementById('checkEmail');
-    let rep = document.getElementById('checkRep');
-    let carg = document.getElementById('checkCarg');
-    let data = document.getElementById('checkData');
-
-    let cnpj2 = document.getElementById('cnpj');
-    let raz2 = document.getElementById('raz_soc');
-    let nom2 = document.getElementById('nome_fantasia');
-    let mod2 = document.getElementById('modal');
-    let log2 = document.getElementById('logradouro');
-    let num2 = document.getElementById('log_num');
-    let comp2 = document.getElementById('log_comp');
-    let bai2 = document.getElementById('bairro');
-    let uf2 = document.getElementById('uf');
-    let cid2 = document.getElementById('cidade');
-    let cep2 = document.getElementById('cep');
-    let ddd2 = document.getElementById('ddd');
-    let tel2 = document.getElementById('telefone');
-    let fax2 = document.getElementById('fax');
-    let email2 = document.getElementById('email');
-    let rep2 = document.getElementById('representante');
-    let carg2 = document.getElementById('carg_rep');
-    let data2 = document.getElementById('data_reg_ans');
-
-    if (cnpj.checked == true){
-        cnpj2.style.display = "block";
-    } else {
-        cnpj2.style.display = "none";
-    }
-    
-    if (raz.checked == true){
-        raz2.style.display = "block";
-    } else {
-        raz2.style.display = "none";
-    }
-    
-    if (nom.checked == true){
-        nom2.style.display = "block";
-    } else {
-        nom2.style.display = "none";
-    }
-    
-    if (mod.checked == true){
-        mod2.style.display = "block";
-    } else {
-        mod2.style.display = "none";
-    }
-    
-    if (log.checked == true){
-        log2.style.display = "block";
-    } else {
-        log2.style.display = "none";
-    }
-    
-    if (num.checked == true){
-        num2.style.display = "block";
-    } else {
-        num2.style.display = "none";
-    }
-    
-    if (comp.checked == true){
-        comp2.style.display = "block";
-    } else {
-        comp2.style.display = "none";
-    }
-    
-    if (bai.checked == true){
-        bai2.style.display = "block";
-    } else {
-        bai2.style.display = "none";
-    }
-    
-    if (uf.checked == true){
-        uf2.style.display = "block";
-    } else {
-        uf2.style.display = "none";
-    }
-    
-    if (cid.checked == true){
-        cid2.style.display = "block";
-    } else {
-        cid2.style.display = "none";
-    }
-    
-    if (cep.checked == true){
-        cep2.style.display = "block";
-    } else {
-        cep2.style.display = "none";
-    }
-    
-    if (ddd.checked == true){
-        ddd2.style.display = "block";
-    } else {
-        ddd2.style.display = "none";
-    }
-    
-    if (tel.checked == true){
-        tel2.style.display = "block";
-    } else {
-        tel2.style.display = "none";
-    }
-    
-    if (fax.checked == true){
-        fax2.style.display = "block";
-    } else {
-        fax2.style.display = "none";
-    }
-    
-    if (email.checked == true){
-        email2.style.display = "block";
-    } else {
-        email2.style.display = "none";
-    }
-    
-    if (rep.checked == true){
-        rep2.style.display = "block";
-    } else {
-        rep2.style.display = "none";
-    }
-    
-    if (carg.checked == true){
-        carg2.style.display = "block";
-    } else {
-        carg2.style.display = "none";
-    }
-    
-    if (data.checked == true){
-        data2.style.display = "block";
-    } else {
-        data2.style.display = "none";
-    }
-
-}
+} 

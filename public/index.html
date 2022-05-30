@@ -16,7 +16,7 @@
     <script src="https://unpkg.com/vue@3"></script>
     <!-- JavaScript -->
     <script src="/public/functions.js"></script>
-    <script>table()</script>
+    <script>read()</script>
     
     <title>Relação de Operadoras Ativas ANS</title>
 </head>
@@ -48,7 +48,7 @@
                 </div>
                 <form class="form-inline" id="flex">
                     <input id="searchInput" class="form-control" type="text" placeholder="Registro ANS" aria-label="Search">
-                    <button class="btn btn-outline-primary" type="button" onclick="search()">Pesquisar</button>
+                    <button id="btnSearch" class="btn btn-outline-primary" type="button" onclick="searchBar()">Pesquisar</button>
                 </form>
             </nav>  
         </div>  
