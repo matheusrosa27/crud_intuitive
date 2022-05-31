@@ -7,6 +7,7 @@
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css" type="text/css">
+    
     <!-- Bootstrap -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
@@ -14,8 +15,13 @@
     
     <!-- Vue.js -->
     <script src="https://unpkg.com/vue@3"></script>
+    
     <!-- JavaScript -->
     <script src="/public/functions.js"></script>
+
+    <script>
+        search();
+    </script>
     
     <title>Relação de Operadoras Ativas ANS</title>
 </head>
@@ -52,24 +58,22 @@
             </nav>  
         </div>  
         
-        <div class="container" id="divWhite">
-            <p id="addTitle">Deletar Operadora</p>
-            <p id="addSubtitle">Digite abaixo o Registro ANS da operadora que deseja deletar!</p>
-
-
-            <div class="container">
-                Registro ANS*: <input type="text" class="form-control" maxlength="6" max="999999" id="reg_ans">
-                    
-                <br/>
-                <div class="d-flex justify-content-center">
-                    <button type="button" class="btn btn-outline-primary" onclick="delet()">Deletar!</button>
-                </div>
+        <div class="container containerTable" id="divWhite">            
+            <div class="container table-responsive-md">
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Registro ANS</th> <th>CNPJ</th> <th>Razão Social</th> <th>Nome Fantasia</th> <th>Modalidade</th> <th>Logradouro</th> <th>Número</th> <th>Complemento</th> <th>Bairro</th> <th>Cidade</th> <th>UF</th> <th>CEP</th> <th>DDD</th> <th>Telefone</th> <th>Fax</th> <th>Endereço eletrônico</th> <th>Representante</th> <th>Cargo Representante</th> <th>Data Registro ANS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="bodyTable">
+        
+                    </tbody>
+                </table>
             </div>
-            <br/>
         </div>
-        <br/>
     </div>
-
+    
     <script>
         const { createApp } = Vue
 
@@ -81,6 +85,7 @@
             }
         }).mount('#app')        
     </script>
-</body>
+
+    </body>
 
 </html>
