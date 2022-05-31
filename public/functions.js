@@ -20,7 +20,7 @@ function insert() {
   let carg_rep = document.getElementById("carg_rep").value;
   let data_reg_ans = document.getElementById("data_reg_ans").value;
 
-  if (reg_ans < 111111 || reg_ans > 999999) {
+  if (reg_ans < 000001 || reg_ans > 999999) {
     window.alert("Registro ANS inválido");
   } else if (
     !reg_ans ||
