@@ -6,3 +6,5 @@
 # Para esse projeto, utilizei o MySQL Workbench para criar o banco de dados;
 # Execute o arquivo "script.sql" para criar o banco de dados, tabela e não se esqueça de alterar o caminho para encontrar o arquivo ".csv";
 # Depois disso, basta dar um "npm start" para executar o servidor Node e iniciar o projeto.
+
+<img src=>

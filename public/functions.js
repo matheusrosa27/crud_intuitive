@@ -185,23 +185,23 @@ function delet() {
 }
 
 // Change window
-function change(){
-    window.location = "/search.html";
+function change() {
+  window.location = "/search.html";
 }
 
 // Get Registro ANS
-function getReg(){
-    let reg_ans = document.getElementById('searchInput').value;
-    localStorage.setItem('reg_ans', reg_ans);
-    
-    change();
+function getReg() {
+  let reg_ans = document.getElementById("searchInput").value;
+  localStorage.setItem("reg_ans", reg_ans);
+
+  change();
 }
 
 // Search
 function search() {
-  let reg_ans = localStorage.getItem('reg_ans');
+  let reg_ans = localStorage.getItem("reg_ans");
 
-  fetch("/readCond?reg_ans="+reg_ans).then((response) => {
+  fetch("/readCond?reg_ans=" + reg_ans).then((response) => {
     return response.json().then((json) => {
       let tabela = document.getElementById("bodyTable");
       for (let index = 0; index < json.length; index++) {
