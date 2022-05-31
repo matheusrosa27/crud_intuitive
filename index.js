@@ -84,8 +84,8 @@ app.get("/insert",(req,res) => {
                 res.status(500).send(erro);
                 res.send('Erro!');
             } else {
-                console.log(resultado);
-                res.send('Adicionado com sucesso!');
+                console.log('Adicionado com sucesso!');
+                res.send(resultado);
             }
         });
     }

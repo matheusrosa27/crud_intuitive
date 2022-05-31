@@ -249,6 +249,7 @@ function search() {
       }
     });
   });
+  localStorage.clear();
 }
 
 // Read
